@@ -1,0 +1,14 @@
+# Interface et données
+streamlit>=1.40
+pandas
+# IA
+faster-whisper        # reconnaissance vocale (Whisper)
+transformers          # NLLB-200 et voix MMS-TTS
+sentencepiece         # nécessaire pour NLLB-200
+torch                 # moteur des modèles
+scipy                 # écrire les fichiers audio
+uroman                # écriture latine pour certaines voix
+ollama                # parler au LLM local
+# Évaluation (étape 8)
+sacrebleu
+jiwer

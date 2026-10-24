@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>robot_traducteur</name>
+  <version>0.1.0</version>
+  <description>Robot traducteur : français vers anglais et darija</description>
+  <maintainer email="etudiant@hestim.ma">Awa Aimee Benzekry, Ramatoulaye Diawane</maintainer>
+  <license>MIT</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>
