@@ -9,7 +9,7 @@ BASE_DONNEES = DOSSIER / "donnees" / "historique.db"
 # Modèles d'IA
 WHISPER_MODELE = "small"                          # tiny, base, small, medium (plus gros = plus précis mais plus lent)
 NLLB_MODELE = "facebook/nllb-200-distilled-600M"  # modèle de traduction
-LLM_MODELE = "qwen2.5:3b"                         # modèle Ollama qui comprend la demande
+LLM_MODELE = "qwen2.5:1.5b"                        # modèle Ollama qui comprend la demande
 TTS_MODELES = {"anglais": "facebook/mms-tts-eng", "darija": "facebook/mms-tts-ara"}
 
 # Codes de langue NLLB
