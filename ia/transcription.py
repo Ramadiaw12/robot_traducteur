@@ -3,7 +3,7 @@ import config
 
 _modele = None
 
-
+# Fonction pour vérifier si la reconnaissance vocale est disponible (modèles installés et non en mode démo)
 def whisper_disponible():
     if config.MODE is True:
         return False
@@ -13,7 +13,7 @@ def whisper_disponible():
     except Exception:
         return False
 
-
+# Fonction pour transcrire un fichier audio en texte, avec confiance approximative
 def transcrire(chemin_audio):
     """Renvoie {'texte', 'confiance', 'methode'} à partir d'un fichier audio (wav, mp3...)."""
     global _modele

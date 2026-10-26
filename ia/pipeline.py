@@ -9,7 +9,7 @@ from ia.transcription import transcrire
 from ia.voix import parler
 from donnees import db
 
-
+# Point d'entrée unique, utilisé par le tableau de bord ET par le nœud ROS 2
 def traiter(texte=None, audio=None, canal="texte", langue_forcee=None, avec_voix=True):
     """Point d'entrée unique, utilisé par le tableau de bord ET par le nœud ROS 2.
     texte : phrase écrite, ou audio : chemin d'un fichier audio. Renvoie un dictionnaire avec tout le détail."""

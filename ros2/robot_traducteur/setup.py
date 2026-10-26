@@ -1,6 +1,7 @@
 from setuptools import setup
 from glob import glob
 
+# Pour le package ROS 2 "robot_traducteur"
 setup(
     name="robot_traducteur",
     version="0.1.0",

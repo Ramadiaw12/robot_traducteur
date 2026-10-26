@@ -16,7 +16,7 @@ Demande : « Bonjour, je cherche la salle 12 » -> {{"texte": "Bonjour, je cherc
 
 Demande : « {phrase} »"""
 
-
+# Renvoie {'texte', 'langue', 'methode'}. Si langue_forcee est donnée (choix sur la plateforme), on la garde
 def llm_disponible():
     if config.MODE is True:
         return False
@@ -27,7 +27,7 @@ def llm_disponible():
     except Exception:
         return False
 
-
+# Solution de secours sans LLM : on cherche les mots-clés
 def comprendre_par_regles(phrase):
     """Solution de secours sans LLM : on cherche les mots-clés."""
     p = phrase.strip()
@@ -38,7 +38,7 @@ def comprendre_par_regles(phrase):
     texte = texte.strip(" :,«»\"'?") or p
     return {"texte": texte, "langue": langue, "methode": "règles"}
 
-
+# Renvoie {'texte', 'langue', 'methode'}. Si langue_forcee est donnée (choix sur la plateforme), on la garde
 def comprendre(phrase, langue_forcee=None):
     """Renvoie {'texte', 'langue', 'methode'}. Si langue_forcee est donnée (choix sur la plateforme), on la garde."""
     if llm_disponible():

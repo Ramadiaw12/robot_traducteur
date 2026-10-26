@@ -21,7 +21,7 @@ st.set_page_config(page_title="Robot traducteur", page_icon="🤖", layout="wide
 
 NAVY, BLEU, CIEL, VERT, OR, ROSE = "#0F2954", "#2F6FD6", "#7FB2FF", "#2A9D8F", "#F2B33D", "#FF6B8B"
 
-# ------------------------------------------------------------------ STYLE
+#  STYLE
 CSS = f"""
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
