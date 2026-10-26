@@ -22,13 +22,13 @@ def parler(texte, langue, fichier_sortie):
         import torch
         import scipy.io.wavfile
         from transformers import VitsModel, AutoTokenizer
-        nom = config.TTS_MODELES[langue]
+        nom = config.TTS_MODELES[langue] # nom du modèle MMS-TTS pour la langue qui correspond par défaut à la demande (anglais ou darija)
         if nom not in _cache:
             _cache[nom] = (VitsModel.from_pretrained(nom), AutoTokenizer.from_pretrained(nom))
         modele, tok = _cache[nom]
         if getattr(tok, "is_uroman", False):  # certaines langues demandent une écriture en lettres latines
             import uroman
-            texte = uroman.Uroman().romanize_string(texte)
+            texte = uroman.Uroman().romanize_string(texte) # exemple : "السلام" -> "alslam"
         entrees = tok(texte, return_tensors="pt")
         with torch.no_grad():
             onde = modele(**entrees).waveform[0].numpy()
