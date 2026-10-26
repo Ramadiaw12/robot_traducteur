@@ -14,7 +14,7 @@ class Voix(Node):
         super().__init__("voix")
         self.create_subscription(String, "/traduction", self.recevoir, 10)
         self.get_logger().info("Prêt. J'écoute /traduction")
-
+    # Fonction de rappel pour recevoir les messages de traduction
     def recevoir(self, msg):
         r = json.loads(msg.data)
         self.get_logger().info(f"Je dis ({r['langue']}) : {r['traduction']}")
@@ -23,7 +23,7 @@ class Voix(Node):
         else:
             self.get_logger().warn("Pas de fichier audio (voix non disponible) : texte seulement")
 
-
+# Fonction principale pour initialiser le nœud ROS 2 et le faire tourner
 def main():
     rclpy.init()
     rclpy.spin(Voix())

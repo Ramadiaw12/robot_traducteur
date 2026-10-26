@@ -14,7 +14,7 @@ PROJET = os.environ.get("ROBOT_TRADUCTEUR_DIR", os.path.expanduser("~/robot-trad
 sys.path.insert(0, PROJET)
 from ia.pipeline import traiter  # noqa: E402
 
-
+# Nœud ROS 2 « traducteur » (tourne sur le PC).
 class Traducteur(Node):
     def __init__(self):
         super().__init__("traducteur")

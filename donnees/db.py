@@ -26,7 +26,7 @@ def connexion():
     c.execute(SCHEMA)
     return c
 
-
+# Enregistre un échange dans la base de données et retourne l'id de l'échange.
 def enregistrer(res):
     with connexion() as c:
         cur = c.execute(

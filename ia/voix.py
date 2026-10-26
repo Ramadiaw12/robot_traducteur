@@ -3,7 +3,7 @@ import config
 
 _cache = {}
 
-
+# Fonction pour vérifier si la synthèse vocale est disponible (modèles installés et non en mode démo)
 def tts_disponible():
     if config.MODE is True:
         return False
@@ -13,7 +13,7 @@ def tts_disponible():
     except Exception:
         return False
 
-
+# Fonction pour générer un fichier audio à partir d'un texte et d'une langue donnée
 def parler(texte, langue, fichier_sortie):
     """Crée un fichier WAV. Renvoie le chemin, ou None si la voix n'est pas disponible."""
     if not tts_disponible():

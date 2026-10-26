@@ -27,7 +27,7 @@ def nllb_disponible():
     except Exception:
         return False
 
-
+# Renvoie le modèle et le tokenizer NLLB-200 (ou les charge si nécessaire).
 def _charger():
     global _modele, _tokenizer
     if _modele is None:
@@ -36,12 +36,12 @@ def _charger():
         _modele = AutoModelForSeq2SeqLM.from_pretrained(config.NLLB_MODELE)
     return _modele, _tokenizer
 
-
+# Renvoie une traduction de démonstration (pour le mode démo ou si NLLB n'est pas disponible).
 def traduire_demo(texte, langue):
     cle = texte.lower().strip(" ?!.")
     return DEMO.get(langue, {}).get(cle, f"[démo {langue}] {texte}")
 
-
+# Renvoie {'traduction', 'methode'}.
 def traduire(texte, langue):
     """Renvoie {'traduction', 'methode'}."""
     if not nllb_disponible():
